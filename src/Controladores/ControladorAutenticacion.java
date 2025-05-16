@@ -13,5 +13,4 @@ public class ControladorAutenticacion {
             return false;
         }
     }
-
 }
