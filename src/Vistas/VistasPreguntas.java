@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class VistasPreguntas {
     private final ControladorPregunta controladorPregunta;
 
-    public VistasPreguntas(ControladorPregunta controladorPregunta) {
+    public VistasPreguntas() {
         this.controladorPregunta = new ControladorPregunta();
     }
 

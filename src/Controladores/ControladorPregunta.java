@@ -4,7 +4,13 @@ import Modelos.Pregunta;
 
 
 public class ControladorPregunta {
-    private Pregunta[] preguntas;
+    private static Pregunta[] preguntas;
+    private int totalPreguntas;
+
+    public ControladorPregunta() {
+        this.totalPreguntas = 0;
+        preguntas = new Pregunta[0];
+    }
 
     public Pregunta[] getPreguntas() {
         return preguntas;
@@ -21,8 +27,6 @@ public class ControladorPregunta {
     public void setTotalPreguntas(int totalPreguntas) {
         this.totalPreguntas = totalPreguntas;
     }
-
-    private int totalPreguntas;
 
     public Pregunta crearPregunta(String pregunta, String respuesta, String estado, String correoPregunta, String creadorPregunta, boolean apruebaPregunta, int idPregunta) {
         return new Pregunta(pregunta,respuesta,estado,correoPregunta,creadorPregunta,apruebaPregunta,idPregunta);
