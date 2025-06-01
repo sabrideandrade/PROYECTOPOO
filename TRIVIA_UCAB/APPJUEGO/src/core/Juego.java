@@ -17,7 +17,7 @@ public class Juego {
     private final Scanner scanner = new Scanner(System.in);
     private int turno;
 
-    // core/Juego.java (fragmento relevante)
+
     public void iniciar() {
         Menu menu = new Menu();
         boolean nueva = menu.mostrarMenuPrincipal();
