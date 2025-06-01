@@ -23,7 +23,7 @@ public class VistaMenuPrincipal {
         this.vistasPreguntas = new VistasPreguntas();
         this.controladorUsuario = new ControladorUsuario();
         this.controladorAutenticacion = new ControladorAutenticacion();
-        this.usuarioLogueado = null;
+        this.usuarioLogueado = this.controladorUsuario.crearUsuario("Carlos","Belfort","carlos@gmail.com","12334","administrador");
     }
 
     public void mostrarMenu() {
@@ -74,6 +74,7 @@ public class VistaMenuPrincipal {
                 System.out.println("6. Eliminar pregunta");
                 System.out.println("7. Aprobar pregunta");
                 System.out.println("8. Cerrar sesión");
+                System.out.println("9. Crear usuario");
                 System.out.println("0. Salir");
                 System.out.print("Seleccione una opción: ");
                 opcion = sc.nextInt();
@@ -104,6 +105,9 @@ public class VistaMenuPrincipal {
                     case 8:
                         usuarioLogueado = null;
                         System.out.println("Sesión cerrada correctamente.");
+                        break;
+                    case 9:
+                        vistasUsuarios.agregarUsuario();
                         break;
                     case 0:
                         System.out.println("Saliendo del sistema...");
