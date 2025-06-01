@@ -1,4 +1,3 @@
-// core/Juego.java
 package core;
 
 import archivo.GuardadoPartidaGson;
