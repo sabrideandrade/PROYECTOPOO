@@ -23,7 +23,7 @@ public class VistaMenuPrincipal {
         this.vistasPreguntas = new VistasPreguntas();
         this.controladorUsuario = new ControladorUsuario();
         this.controladorAutenticacion = new ControladorAutenticacion();
-        this.usuarioLogueado = this.controladorUsuario.crearUsuario("Carlos","Belfort","carlos@gmail.com","12334","administrador");
+        this.usuarioLogueado = null;
     }
 
     public void mostrarMenu() {

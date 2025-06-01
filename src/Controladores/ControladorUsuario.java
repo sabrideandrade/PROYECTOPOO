@@ -2,11 +2,10 @@ package Controladores;
 
 import Modelos.Usuario;
 
-
 public class ControladorUsuario {
     private static Usuario[] usuarios;
     private static int cantidadTotalUsuarios;
-    private ControladorJsonUsuario manejadorJson; // Instancia del manejador JSON
+    private  ControladorJsonUsuario controladorJsonUsuario;
 
     public static Usuario[] getUsuarios() {
         Usuario[] tempUsuarios = new Usuario[cantidadTotalUsuarios];
@@ -29,12 +28,17 @@ public class ControladorUsuario {
     }
 
     public ControladorUsuario() {
-        this.manejadorJson = new ControladorJsonUsuario(); // Inicializa el manejador JSON
-        // Al iniciar el controlador, intenta cargar los usuarios desde el JSON
-        Usuario[] usuariosCargados = manejadorJson.leerUsuariosDesdeJson();
+        this.controladorJsonUsuario = new ControladorJsonUsuario();
+        // Al instanciar el controlador, se cargan los usuarios desde el JSON
+        cargarUsuariosDesdeJson();
+        System.out.println("ControladorUsuario inicializado. Usuarios cargados: " + cantidadTotalUsuarios);
+    }
+
+    // Nuevo método privado para cargar los usuarios desde JSON
+    private void cargarUsuariosDesdeJson() {
+        Usuario[] usuariosCargados = controladorJsonUsuario.leerUsuariosDesdeJson();
         ControladorUsuario.setUsuarios(usuariosCargados);
         ControladorUsuario.setCantidadTotalUsuarios(usuariosCargados.length);
-        System.out.println("Usuarios cargados desde JSON al iniciar: " + cantidadTotalUsuarios);
     }
 
     public void agregarUsuario(Usuario nuevoUsuario) {
@@ -51,9 +55,8 @@ public class ControladorUsuario {
         guardarUsuariosEnJson();
     }
 
-
     private void guardarUsuariosEnJson() {
-        manejadorJson.escribirUsuariosAJson(ControladorUsuario.getUsuarios());
+        controladorJsonUsuario.escribirUsuariosAJson(ControladorUsuario.getUsuarios());
     }
 
     public void mostrarUsuarios() {
@@ -83,4 +86,5 @@ public class ControladorUsuario {
         }
         return null;
     }
+
 }
