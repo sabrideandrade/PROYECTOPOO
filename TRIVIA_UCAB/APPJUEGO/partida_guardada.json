@@ -1,0 +1,42 @@
+[
+  {
+    "correo": "sabrina",
+    "ficha": {
+      "categoriasCompletadas": []
+    },
+    "posicion": 3,
+    "enCentro": false,
+    "estadistica": {
+      "juegosGanados": 0,
+      "tiempoTotal": 0,
+      "correctasPorCategoria": {
+        "geo": 0,
+        "art": 0,
+        "his": 0,
+        "ent": 0,
+        "dep": 0,
+        "cie": 0
+      }
+    }
+  },
+  {
+    "correo": "samnatha",
+    "ficha": {
+      "categoriasCompletadas": []
+    },
+    "posicion": 8,
+    "enCentro": false,
+    "estadistica": {
+      "juegosGanados": 0,
+      "tiempoTotal": 0,
+      "correctasPorCategoria": {
+        "geo": 0,
+        "art": 0,
+        "his": 0,
+        "ent": 0,
+        "dep": 0,
+        "cie": 0
+      }
+    }
+  }
+]
