@@ -1,6 +1,7 @@
 package Controladores;
 
 import Modelos.Usuario;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class ControladorUsuario {
     private static Usuario[] usuarios;
@@ -34,7 +35,7 @@ public class ControladorUsuario {
         System.out.println("ControladorUsuario inicializado. Usuarios cargados: " + cantidadTotalUsuarios);
     }
 
-    // Nuevo método privado para cargar los usuarios desde JSON
+
     private void cargarUsuariosDesdeJson() {
         Usuario[] usuariosCargados = controladorJsonUsuario.leerUsuariosDesdeJson();
         ControladorUsuario.setUsuarios(usuariosCargados);
@@ -75,8 +76,14 @@ public class ControladorUsuario {
     }
 
     public Usuario crearUsuario(String nombre, String apellido, String correo, String contrasena, String rol) {
-        return new Usuario(nombre, apellido, correo, rol , contrasena);
+        String contrasenaHasheada = hashContrasena(contrasena);
+        return new Usuario(nombre, apellido, correo, rol , contrasenaHasheada);
     }
+
+    private String hashContrasena(String contrasenaPlana) {
+        return BCrypt.hashpw(contrasenaPlana, BCrypt.gensalt(12));
+    }
+
 
     public Usuario buscarUsuarioCorreo(String correo) {
         for (int i = 0; i < cantidadTotalUsuarios; i++) {
