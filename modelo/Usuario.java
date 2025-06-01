@@ -3,14 +3,14 @@ package modelo;
 public class Usuario {
     private String correo;
     private Ficha ficha;
-    private int posicion; // ID de casilla
+    private int posicion; 
     private boolean enCentro;
     private Estadistica estadistica;
 
     public Usuario(String correo) {
         this.correo = correo;
         this.ficha = new Ficha();
-        this.posicion = 72; // Centro
+        this.posicion = 72; 
         this.enCentro = true;
         this.estadistica = new Estadistica();
     }
